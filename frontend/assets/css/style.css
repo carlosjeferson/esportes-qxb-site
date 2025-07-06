@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Roboto:wght@400;700&display=swap');
 
-/* Variáveis para cores (versão clara) */
 :root {
     --cor-principal: #f8f9fa; /* Branco Quase Puro - Fundo Principal */
     --cor-secundaria: #e9ecef; /* Cinza Muito Claro - Fundo Secundário */
     --cor-destaque: #007bff; /* Azul Vibrante - Destaque Principal */
-    --cor-acento: #00ff7f; /* Verde Neon/Ciano - Acento Forte (Pode ser um azul mais vibrante ou roxo) */
+    --cor-acento: #00ff7f; /* Verde Neon/Ciano - Acento Forte */
     --cor-texto-escuro: #212529; /* Preto Quase Puro - Texto */
     --cor-texto-neutro: #495057; /* Cinza Escuro - Texto Secundário */
     --cor-borda-clara: #ced4da; /* Cinza de Borda Leve */
@@ -16,12 +15,12 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Uma fonte padrão, você pode trocar por uma mais "gamer" */
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: var(--cor-principal);
-    color: var(--cor-texto-escuro); /* Texto escuro no fundo claro */
+    color: var(--cor-texto-escuro);
 }
 
 .container {
@@ -33,12 +32,13 @@ body {
 /* --- */
 /* Estilização do Header */
 /* --- */
+
 header {
-    background-color: var(--cor-principal); /* Fundo claro */
+    background-color: var(--cor-principal);
     color: var(--cor-texto-escuro);
     padding: 15px 0;
-    border-bottom: 3px solid var(--cor-destaque); /* Linha de destaque azul vibrante */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave para fundos claros */
+    border-bottom: 3px solid var(--cor-destaque);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -59,7 +59,7 @@ header .container {
 .logo img {
     height: 50px;
     margin-right: 10px;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2)); /* Sombra suave para o logo */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
 
 .logo h1 {
@@ -96,7 +96,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: var(--cor-acento); /* Muda para o verde neon/ciano no hover */
+    color: var(--cor-acento);
     transform: translateY(-2px);
 }
 
@@ -107,7 +107,7 @@ nav ul li a::after {
     bottom: -5px;
     width: 0;
     height: 3px;
-    background-color: var(--cor-acento); /* Linha verde neon/ciano */
+    background-color: var(--cor-acento);
     transition: width 0.3s ease-in-out;
 }
 
@@ -123,7 +123,6 @@ nav ul li a.active::after {
 
 #hero {
     background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), url('https://jornaltribuna.com.br/wp-content/uploads/2021/06/Alunos-do-Jaboatao-participam-de-experiencia-com-bicicletas-adaptas-na-Semana-Municipal-da-Pessoa-com-Deficiencia.jpg') no-repeat center center/cover;
-    /* Essa imagem mostra vários esportes, ou você pode usar uma de um estádio, quadra, etc. */
     color: var(--cor-texto-escuro);
     text-align: center;
     padding: 100px 0;
@@ -131,25 +130,14 @@ nav ul li a.active::after {
     overflow: hidden;
 }
 
-#hero::before { /* Efeito de degradê sutil sobre a imagem */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
-    pointer-events: none;
-}
-
 #hero h2 {
     font-size: 3.5em;
     margin-bottom: 20px;
-    color: var(--cor-destaque); /* Título em azul vibrante */
+    color: var(--cor-destaque);
     font-family: 'Rajdhani', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.4); /* Sombra para o título */
+    text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.4);
 }
 
 #hero p {
@@ -164,27 +152,26 @@ nav ul li a.active::after {
 .btn {
     display: inline-block;
     background-color: var(--cor-destaque);
-    color: var(--cor-texto-claro); /* Branco para o texto do botão */
+    color: var(--cor-texto-claro); 
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Sombra azul para o botão */
-    border: none; /* Remover qualquer borda padrão */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    border: none; 
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    background-color: var(--cor-acento); /* Verde neon no hover */
+    background-color: var(--cor-acento);
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4); /* Sombra verde neon no hover */
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4);
 }
 
-/* Seção de Destaques (Features) */
 #destaques {
     background-color: var(--cor-principal);
     padding: 80px 0;
@@ -203,28 +190,28 @@ nav ul li a.active::after {
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo com 3 colunas */
-    gap: 30px; /* Espaçamento entre os itens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .feature-item {
-    background-color: var(--cor-secundaria); /* Fundo cinza claro para os itens */
+    background-color: var(--cor-secundaria);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid var(--cor-borda-clara); /* Borda superior sutil */
+    border-top: 5px solid var(--cor-borda-clara);
 }
 
 .feature-item:hover {
-    transform: translateY(-8px); /* Efeito de levantar mais acentuado */
+    transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-top: 5px solid var(--cor-destaque); /* Borda superior azul no hover */
+    border-top: 5px solid var(--cor-destaque);
 }
 
 .feature-item h4 {
     font-size: 1.6em;
-    color: var(--cor-destaque); /* Título do item em azul vibrante */
+    color: var(--cor-destaque);
     margin-bottom: 15px;
     font-family: 'Rajdhani', sans-serif;
     text-transform: uppercase;
@@ -238,13 +225,12 @@ nav ul li a.active::after {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Seção de Chamada para Ação */
 #chamada-acao {
-    background-color: var(--cor-destaque); /* Fundo azul vibrante para a CTA */
-    color: var(--cor-texto-claro); /* Texto branco */
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-claro);
     text-align: center;
     padding: 60px 0;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #chamada-acao h2 {
@@ -261,21 +247,21 @@ nav ul li a.active::after {
     font-size: 1.2em;
     max-width: 700px;
     margin: 0 auto 30px auto;
-    color: rgba(255, 255, 255, 0.9); /* Branco com um pouco de transparência */
+    color: rgba(255, 255, 255, 0.9);
     font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary {
     display: inline-block;
-    background-color: var(--cor-acento); /* Verde neon para o CTA principal */
-    color: var(--cor-texto-escuro); /* Texto escuro no botão neon */
+    background-color: var(--cor-acento);
+    color: var(--cor-texto-escuro);
     padding: 18px 35px;
     text-decoration: none;
-    border-radius: 8px; /* Cantos mais arredondados */
+    border-radius: 8px;
     font-weight: bold;
     font-size: 1.25em;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4); /* Sombra vibrante */
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4);
     border: none;
     font-family: 'Rajdhani', sans-serif;
     text-transform: uppercase;
@@ -283,14 +269,15 @@ nav ul li a.active::after {
 }
 
 .btn-primary:hover {
-    background-color: #00e06e; /* Um pouco mais escuro no hover */
+    background-color: #00e06e;
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 255, 127, 0.5); /* Sombra mais intensa */
+    box-shadow: 0 8px 15px rgba(0, 255, 127, 0.5);
 }
 
 /* --- */
 /* Responsividade para a Main */
 /* --- */
+
 @media (max-width: 992px) {
     #hero h2 {
         font-size: 3em;
@@ -352,7 +339,7 @@ nav ul li a.active::after {
         margin-right: auto;
     }
     .feature-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        grid-template-columns: 1fr;
     }
 }
 
@@ -362,21 +349,21 @@ nav ul li a.active::after {
 
 #eventos-futuros,
 #eventos-passados {
-    padding: 60px 0; /* Espaçamento superior e inferior para as seções */
-    background-color: var(--cor-principal); /* Fundo branco principal */
+    padding: 60px 0;
+    background-color: var(--cor-principal);
     color: var(--cor-texto-escuro);
     text-align: center;
-    border-bottom: 1px solid var(--cor-borda-clara); /* Borda sutil entre as seções */
+    border-bottom: 1px solid var(--cor-borda-clara);
 }
 
 #eventos-passados {
-    border-bottom: none; /* A última seção não precisa de borda inferior */
+    border-bottom: none;
 }
 
 #eventos-futuros h2,
 #eventos-passados h2 {
     font-size: 2.8em;
-    color: var(--cor-destaque); /* Títulos em azul vibrante */
+    color: var(--cor-destaque);
     margin-bottom: 40px;
     font-family: 'Rajdhani', sans-serif;
     text-transform: uppercase;
@@ -490,16 +477,17 @@ nav ul li a.active::after {
 }
 
 .event-item.past .btn-details {
-    background-color: var(--cor-texto-neutro); /* Botão cinza para eventos passados */
+    background-color: var(--cor-texto-neutro);
     color: var(--cor-texto-claro);
-    cursor: default; /* Indica que não é clicável/inscricionável */
+    cursor: pointer;
     box-shadow: none;
 }
 
 .event-item.past .btn-details:hover {
-    background-color: var(--cor-texto-neutro); /* Mantém a cor cinza no hover */
-    transform: none; /* Remove o levantar */
-    box-shadow: none;
+    background-color: var(--cor-acento); /* Mantém a cor cinza no hover */
+    transform: translateY(-2px);
+    transition: ease 0.3s
+
 }
 
 
@@ -998,7 +986,7 @@ nav ul li a.active::after {
 /* --- */
 
 #ligas-intro {
-    background-color: var(--cor-secundaria); /* Fundo cinza claro para a intro */
+    background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), url('https://jornaltribuna.com.br/wp-content/uploads/2021/06/Alunos-do-Jaboatao-participam-de-experiencia-com-bicicletas-adaptas-na-Semana-Municipal-da-Pessoa-com-Deficiencia.jpg') no-repeat center center/cover;
     color: var(--cor-texto-escuro);
     padding: 60px 0;
     text-align: center;
