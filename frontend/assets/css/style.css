@@ -1,0 +1,1582 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* Variáveis para cores (versão clara) */
+:root {
+    --cor-principal: #f8f9fa; /* Branco Quase Puro - Fundo Principal */
+    --cor-secundaria: #e9ecef; /* Cinza Muito Claro - Fundo Secundário */
+    --cor-destaque: #007bff; /* Azul Vibrante - Destaque Principal */
+    --cor-acento: #00ff7f; /* Verde Neon/Ciano - Acento Forte (Pode ser um azul mais vibrante ou roxo) */
+    --cor-texto-escuro: #212529; /* Preto Quase Puro - Texto */
+    --cor-texto-neutro: #495057; /* Cinza Escuro - Texto Secundário */
+    --cor-borda-clara: #ced4da; /* Cinza de Borda Leve */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Uma fonte padrão, você pode trocar por uma mais "gamer" */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-escuro); /* Texto escuro no fundo claro */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- */
+/* Estilização do Header */
+/* --- */
+header {
+    background-color: var(--cor-principal); /* Fundo claro */
+    color: var(--cor-texto-escuro);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--cor-destaque); /* Linha de destaque azul vibrante */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave para fundos claros */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2)); /* Sombra suave para o logo */
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: var(--cor-texto-escuro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--cor-texto-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--cor-acento); /* Muda para o verde neon/ciano no hover */
+    transform: translateY(-2px);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: var(--cor-acento); /* Linha verde neon/ciano */
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+
+/* --- */
+/* Estilização da Seção Main (Página Inicial) */
+/* --- */
+
+#hero {
+    background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), url('https://jornaltribuna.com.br/wp-content/uploads/2021/06/Alunos-do-Jaboatao-participam-de-experiencia-com-bicicletas-adaptas-na-Semana-Municipal-da-Pessoa-com-Deficiencia.jpg') no-repeat center center/cover;
+    /* Essa imagem mostra vários esportes, ou você pode usar uma de um estádio, quadra, etc. */
+    color: var(--cor-texto-escuro);
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before { /* Efeito de degradê sutil sobre a imagem */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--cor-destaque); /* Título em azul vibrante */
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.4); /* Sombra para o título */
+}
+
+#hero p {
+    font-size: 1.4em;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    color: var(--cor-texto-neutro);
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-claro); /* Branco para o texto do botão */
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Sombra azul para o botão */
+    border: none; /* Remover qualquer borda padrão */
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: var(--cor-acento); /* Verde neon no hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4); /* Sombra verde neon no hover */
+}
+
+/* Seção de Destaques (Features) */
+#destaques {
+    background-color: var(--cor-principal);
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda-clara);
+}
+
+#destaques h3 {
+    font-size: 2.5em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 50px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo com 3 colunas */
+    gap: 30px; /* Espaçamento entre os itens */
+}
+
+.feature-item {
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para os itens */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--cor-borda-clara); /* Borda superior sutil */
+}
+
+.feature-item:hover {
+    transform: translateY(-8px); /* Efeito de levantar mais acentuado */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top: 5px solid var(--cor-destaque); /* Borda superior azul no hover */
+}
+
+.feature-item h4 {
+    font-size: 1.6em;
+    color: var(--cor-destaque); /* Título do item em azul vibrante */
+    margin-bottom: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.feature-item p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: var(--cor-texto-neutro);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Seção de Chamada para Ação */
+#chamada-acao {
+    background-color: var(--cor-destaque); /* Fundo azul vibrante para a CTA */
+    color: var(--cor-texto-claro); /* Texto branco */
+    text-align: center;
+    padding: 60px 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+#chamada-acao h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: var(--cor-texto-claro);
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+#chamada-acao p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: rgba(255, 255, 255, 0.9); /* Branco com um pouco de transparência */
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--cor-acento); /* Verde neon para o CTA principal */
+    color: var(--cor-texto-escuro); /* Texto escuro no botão neon */
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 8px; /* Cantos mais arredondados */
+    font-weight: bold;
+    font-size: 1.25em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4); /* Sombra vibrante */
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: #00e06e; /* Um pouco mais escuro no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 255, 127, 0.5); /* Sombra mais intensa */
+}
+
+/* --- */
+/* Responsividade para a Main */
+/* --- */
+@media (max-width: 992px) {
+    #hero h2 {
+        font-size: 3em;
+    }
+    #hero p {
+        font-size: 1.2em;
+    }
+    .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    #hero, #destaques, #chamada-acao {
+        padding: 60px 0;
+    }
+
+    #hero h2 {
+        font-size: 2.5em;
+    }
+    #hero p {
+        font-size: 1.1em;
+    }
+
+    #destaques h3 {
+        font-size: 2em;
+    }
+
+    .feature-item h4 {
+        font-size: 1.4em;
+    }
+
+    .feature-item p {
+        font-size: 0.95em;
+    }
+
+    #chamada-acao h2 {
+        font-size: 2.2em;
+    }
+    #chamada-acao p {
+        font-size: 1em;
+    }
+    .btn, .btn-primary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero h2 {
+        font-size: 2em;
+    }
+    #hero p {
+        font-size: 1em;
+    }
+    .btn, .btn-primary {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+}
+
+/* --- */
+/* Estilização da Página de Eventos (eventos.html) */
+/* --- */
+
+#eventos-futuros,
+#eventos-passados {
+    padding: 60px 0; /* Espaçamento superior e inferior para as seções */
+    background-color: var(--cor-principal); /* Fundo branco principal */
+    color: var(--cor-texto-escuro);
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda-clara); /* Borda sutil entre as seções */
+}
+
+#eventos-passados {
+    border-bottom: none; /* A última seção não precisa de borda inferior */
+}
+
+#eventos-futuros h2,
+#eventos-passados h2 {
+    font-size: 2.8em;
+    color: var(--cor-destaque); /* Títulos em azul vibrante */
+    margin-bottom: 40px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline animado para os títulos das seções de eventos */
+#eventos-futuros h2::after,
+#eventos-passados h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor-acento); /* Verde neon/ciano */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+#eventos-futuros h2:hover::after,
+#eventos-passados h2:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em grid */
+    gap: 30px; /* Espaçamento entre os cards de eventos */
+    margin-top: 40px;
+}
+
+.event-item {
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para os cards */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: left; /* Alinhamento do texto dentro do card */
+    border-top: 5px solid var(--cor-borda-clara); /* Borda superior sutil */
+}
+
+.event-item:hover {
+    transform: translateY(-8px); /* Efeito de levantar */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top-color: var(--cor-destaque); /* Muda a borda para azul no hover */
+}
+
+.event-item h3 {
+    font-size: 1.8em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--cor-borda-clara); /* Linha sutil abaixo do título do evento */
+    padding-bottom: 10px;
+}
+
+.event-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--cor-texto-neutro);
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.event-item p strong {
+    color: var(--cor-destaque); /* Destaque para data e local */
+    font-weight: 700;
+}
+
+.event-item .btn-details {
+    display: inline-block;
+    background-color: var(--cor-acento); /* Botão em verde neon */
+    color: var(--cor-texto-escuro); /* Texto escuro no botão neon */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 255, 127, 0.2); /* Sombra para o botão */
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-item .btn-details:hover {
+    background-color: #00e06e; /* Levemente mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.3);
+}
+
+/* Estilo específico para eventos passados */
+.event-item.past {
+    opacity: 0.8; /* Levemente mais opaco */
+    filter: grayscale(20%); /* Um pouco dessaturado para indicar que é passado */
+    border-top: 5px solid var(--cor-borda-clara); /* Borda sutil */
+}
+
+.event-item.past:hover {
+    transform: none; /* Remove o efeito de levantar no hover para eventos passados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra normal */
+    border-top-color: var(--cor-destaque); /* Ainda muda a borda para azul no hover para feedback */
+}
+
+.event-item.past .btn-details {
+    background-color: var(--cor-texto-neutro); /* Botão cinza para eventos passados */
+    color: var(--cor-texto-claro);
+    cursor: default; /* Indica que não é clicável/inscricionável */
+    box-shadow: none;
+}
+
+.event-item.past .btn-details:hover {
+    background-color: var(--cor-texto-neutro); /* Mantém a cor cinza no hover */
+    transform: none; /* Remove o levantar */
+    box-shadow: none;
+}
+
+
+/* --- */
+/* Responsividade para a Página de Eventos */
+/* --- */
+@media (max-width: 992px) {
+    .event-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    #eventos-futuros h2,
+    #eventos-passados h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    #eventos-futuros,
+    #eventos-passados {
+        padding: 40px 0;
+    }
+    #eventos-futuros h2,
+    #eventos-passados h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .event-list {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 20px;
+    }
+    .event-item {
+        padding: 20px;
+    }
+    .event-item h3 {
+        font-size: 1.5em;
+    }
+    .event-item p {
+        font-size: 0.9em;
+    }
+    .event-item .btn-details {
+        font-size: 0.85em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #eventos-futuros h2,
+    #eventos-passados h2 {
+        font-size: 1.8em;
+    }
+    .event-item h3 {
+        font-size: 1.3em;
+    }
+}
+
+
+/* --- */
+/* Estilização da Página Sobre Nós (sobre.html) */
+/* --- */
+
+#about-intro,
+#our-mission,
+#our-values,
+#our-history {
+    padding: 60px 0; /* Espaçamento superior e inferior para as seções */
+    text-align: center;
+}
+
+#about-intro {
+    background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), url('https://jornaltribuna.com.br/wp-content/uploads/2021/06/Alunos-do-Jaboatao-participam-de-experiencia-com-bicicletas-adaptas-na-Semana-Municipal-da-Pessoa-com-Deficiencia.jpg') no-repeat center center/cover;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 40px;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#about-intro h2 {
+    font-size: 2.8em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 20px;
+    font-family: 'Rajdhani', sans-serif; /* Usando a fonte de destaque */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#about-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--cor-texto-neutro);
+    color: rgb(7, 141, 7);
+}
+
+/* Estilo para as seções de conteúdo (Missão, Valores, História) */
+#our-mission,
+#our-values,
+#our-history {
+    background-color: var(--cor-principal); /* Fundo branco principal */
+    color: var(--cor-texto-escuro);
+    border-bottom: 1px solid var(--cor-borda-clara); /* Borda sutil entre as seções */
+}
+
+#our-history {
+    border-bottom: none; /* Última seção não precisa de borda inferior */
+}
+
+#our-mission h3,
+#our-values h3,
+#our-history h3 {
+    font-size: 2.2em;
+    color: var(--cor-destaque); /* Títulos com a cor de destaque azul */
+    margin-bottom: 30px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative; /* Para o efeito de underline */
+    display: inline-block; /* Para o underline pegar apenas o texto */
+}
+
+/* Underline animado para os títulos das subseções */
+#our-mission h3::after,
+#our-values h3::after,
+#our-history h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor-acento); /* Verde neon/ciano */
+    transform: scaleX(0); /* Começa escondido */
+    transform-origin: bottom right; /* Anima da direita para a esquerda */
+    transition: transform 0.4s ease-out;
+}
+
+/* Efeito de hover/scroll para o underline */
+/* Embora o hover não funcione em elementos que não são links, você pode ativar isso com JS no scroll */
+#our-mission h3:hover::after,
+#our-values h3:hover::after,
+#our-history h3:hover::after {
+    transform: scaleX(1); /* Expande para mostrar a linha */
+    transform-origin: bottom left; /* Anima da esquerda para a direita */
+}
+
+
+#our-mission p,
+#our-history p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--cor-texto-neutro); /* Texto em cinza escuro para melhor contraste */
+}
+
+#our-values ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto;
+    max-width: 700px;
+    text-align: left; /* Alinha a lista à esquerda */
+}
+
+#our-values ul li {
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para cada item da lista */
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--cor-destaque); /* Borda lateral azul */
+}
+
+#our-values ul li:hover {
+    transform: translateY(-5px); /* Efeito de levantar no hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Sombra mais intensa no hover */
+    border-left: 5px solid var(--cor-acento); /* Mudar borda para verde neon no hover */
+}
+
+#our-values ul li strong {
+    color: var(--cor-destaque); /* Nome do valor em azul vibrante */
+    font-size: 1.15em;
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+#our-values ul li p {
+    color: var(--cor-texto-neutro); /* Descrição do valor em cinza escuro */
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    #about-intro h2 {
+        font-size: 2em;
+    }
+
+    #about-intro p {
+        font-size: 1em;
+    }
+
+    #our-mission h3,
+    #our-values h3,
+    #our-history h3 {
+        font-size: 1.8em;
+    }
+
+    #our-mission p,
+    #our-history p {
+        font-size: 0.95em;
+    }
+
+    #our-values ul {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-intro,
+    #our-mission,
+    #our-values,
+    #our-history {
+        padding: 40px 0;
+    }
+
+    #about-intro h2 {
+        font-size: 1.8em;
+    }
+
+    #our-mission h3,
+    #our-values h3,
+    #our-history h3 {
+        font-size: 1.6em;
+    }
+}
+
+/* --- */
+/* Estilização da Página de Contato (contato.html) */
+/* --- */
+
+#contact-info {
+    background-color: rgb(248, 248, 248);
+    color: var(--cor-texto-escuro);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-destaque); /* Linha azul de destaque */
+    margin-bottom: 40px;
+}
+
+#contact-info h2 {
+    font-size: 2.8em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#contact-info p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: var(--cor-texto-neutro);
+}
+
+.contact-details {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-details p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: var(--cor-texto-neutro);
+}
+
+.contact-details p strong {
+    color: var(--cor-destaque); /* Destaque para as informações de contato */
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media h3 {
+    font-size: 1.8em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.social-media a {
+    display: inline-flex; /* Para alinhar texto e ícone */
+    align-items: center;
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--cor-texto-neutro); /* Cor do texto do link social */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a img {
+    height: 35px;
+    width: 35px;
+    margin-right: 8px;
+    /* Ajustes para ícones em fundo claro, começando discretos */
+    filter: grayscale(100%) brightness(150%) opacity(0.7); /* Mais discreto inicialmente */
+    transition: filter 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--cor-destaque); /* Cor do texto do link social no hover */
+    transform: translateY(-3px);
+}
+
+.social-media a:hover img {
+    /* Ícones voltam à cor original e ganham brilho verde neon no hover */
+    filter: grayscale(0%) brightness(100%) drop-shadow(0 0 5px var(--cor-acento));
+}
+
+
+/* Formulário de Contato */
+#contact-form {
+    background-color: var(--cor-principal); /* Fundo branco principal */
+    color: var(--cor-texto-escuro);
+    padding: 60px 0;
+    border-bottom: 1px solid var(--cor-borda-clara);
+}
+
+#contact-form h2 {
+    font-size: 2.5em;
+    color: var(--cor-destaque);
+    margin-bottom: 40px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    text-align: center;
+}
+
+#contact-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para o formulário */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 12px 10px;
+    border: 1px solid var(--cor-borda-clara);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-principal); /* Fundo branco para os campos */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--cor-destaque); /* Borda azul no foco */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Sombra suave no foco */
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+#contact-form button.btn-primary {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3em;
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Seção do Mapa */
+#map {
+    background-color: var(--cor-principal);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#map h2 {
+    font-size: 2.5em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 40px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+}
+
+#map iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Garante que o mapa ocupe 100% da largura do container */
+    max-width: 900px; /* Limita a largura máxima do mapa */
+    height: 450px;
+}
+
+/* --- */
+/* Responsividade para a Página de Contato */
+/* --- */
+@media (max-width: 768px) {
+    #contact-info h2,
+    #contact-form h2,
+    #map h2 {
+        font-size: 2.2em;
+    }
+    #contact-info p,
+    .contact-details p {
+        font-size: 1em;
+    }
+    .social-media a {
+        margin: 0 10px;
+        font-size: 1em;
+    }
+    .social-media a img {
+        height: 30px;
+        width: 30px;
+    }
+    #contact-form form {
+        padding: 20px;
+    }
+    .form-group label {
+        font-size: 1em;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 10px;
+    }
+    #contact-form button.btn-primary {
+        font-size: 1.1em;
+    }
+    #map iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact-info, #contact-form, #map {
+        padding: 40px 0;
+    }
+    #contact-info h2,
+    #contact-form h2,
+    #map h2 {
+        font-size: 1.8em;
+    }
+    .social-media a {
+        display: block; /* Empilha os links sociais em telas muito pequenas */
+        margin-bottom: 10px;
+    }
+    #contact-form form {
+        max-width: 90%; /* Adapta para telas menores */
+    }
+    #map iframe {
+        height: 250px;
+    }
+}
+
+/* --- */
+/* Estilização da Página de Ligas e Competições (ligas.html) */
+/* --- */
+
+#ligas-intro {
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para a intro */
+    color: var(--cor-texto-escuro);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-destaque); /* Linha azul de destaque */
+    margin-bottom: 40px;
+}
+
+#ligas-intro h2 {
+    font-size: 2.8em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#ligas-intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--cor-texto-neutro);
+}
+
+/* Estilo para as seções de ligas específicas */
+#liga-lol,
+#liga-cs,
+#como-participar {
+    background-color: var(--cor-principal); /* Fundo branco principal */
+    color: var(--cor-texto-escuro);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda-clara); /* Borda sutil entre as seções */
+}
+
+#como-participar {
+    border-bottom: none; /* A última seção não precisa de borda inferior */
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para a CTA */
+    padding: 80px 0;
+}
+
+#liga-lol h3,
+#liga-cs h3 {
+    font-size: 2.5em;
+    color: var(--cor-destaque); /* Títulos das ligas em azul vibrante */
+    margin-bottom: 30px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline animado para os títulos das ligas */
+#liga-lol h3::after,
+#liga-cs h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor-acento); /* Verde neon/ciano */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+#liga-lol h3:hover::after,
+#liga-cs h3:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#liga-lol p,
+#liga-cs p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: var(--cor-texto-neutro);
+}
+
+#liga-lol ul,
+#liga-cs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 30px auto;
+    max-width: 600px;
+    text-align: left; /* Alinha os itens da lista à esquerda */
+}
+
+#liga-lol ul li,
+#liga-cs ul li {
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: var(--cor-texto-neutro);
+    display: flex;
+    align-items: center;
+}
+
+#liga-lol ul li::before,
+#liga-cs ul li::before {
+    content: '›'; /* Marcador personalizado para a lista */
+    color: var(--cor-acento); /* Cor verde neon para o marcador */
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#liga-lol ul li strong,
+#liga-cs ul li strong {
+    color: var(--cor-texto-escuro); /* Negrito em cor escura */
+    font-weight: 700;
+}
+
+.btn-details { /* Botões de detalhes para ligas */
+    display: inline-block;
+    background-color: var(--cor-destaque); /* Azul vibrante */
+    color: var(--cor-texto-claro); /* Texto branco */
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    margin: 10px 10px 0 0; /* Espaçamento entre botões */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-details:hover {
+    background-color: var(--cor-acento); /* Verde neon no hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.4);
+}
+
+/* Seção Como Participar (Call to Action) */
+#como-participar h2 {
+    font-size: 2.8em;
+    color: var(--cor-texto-escuro); /* Texto escuro no fundo cinza claro */
+    margin-bottom: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+
+#como-participar p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--cor-texto-neutro);
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary { /* O botão de CTA principal, já estilizado globalmente */
+    margin-top: 20px;
+}
+
+/* --- */
+/* Responsividade para a Página de Ligas */
+/* --- */
+@media (max-width: 992px) {
+    #ligas-intro h2,
+    #liga-lol h3,
+    #liga-cs h3,
+    #como-participar h2 {
+        font-size: 2.5em;
+    }
+    #ligas-intro p,
+    #liga-lol p,
+    #liga-cs p,
+    #como-participar p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #ligas-intro,
+    #liga-lol,
+    #liga-cs,
+    #como-participar {
+        padding: 40px 0;
+    }
+    #ligas-intro h2,
+    #liga-lol h3,
+    #liga-cs h3,
+    #como-participar h2 {
+        font-size: 2em;
+    }
+    #liga-lol ul,
+    #liga-cs ul {
+        padding: 0 15px; /* Adiciona padding em mobile */
+        text-align: center; /* Centraliza a lista em mobile */
+    }
+    #liga-lol ul li,
+    #liga-cs ul li {
+        justify-content: center; /* Centraliza o conteúdo da linha */
+    }
+    #liga-lol ul li::before,
+    #liga-cs ul li::before {
+        display: none; /* Oculta o marcador personalizado em mobile para não desalinhar */
+    }
+    .btn-details {
+        display: block; /* Botões empilhados em mobile */
+        width: calc(100% - 20px); /* Ocupa a largura total */
+        margin: 10px auto; /* Centraliza e adiciona margem */
+    }
+}
+
+@media (max-width: 480px) {
+    #ligas-intro h2,
+    #liga-lol h3,
+    #liga-cs h3,
+    #como-participar h2 {
+        font-size: 1.8em;
+    }
+    .btn-details {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
+
+/* --- */
+/* Estilização da Página de Notícias (noticias.html) */
+/* --- */
+
+#news-feed {
+    background-color: var(--cor-principal); /* Fundo branco principal */
+    color: var(--cor-texto-escuro);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#news-feed h2 {
+    font-size: 2.8em;
+    color: var(--cor-destaque); /* Título principal em azul vibrante */
+    margin-bottom: 40px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Underline animado para o título da seção de notícias */
+#news-feed h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor-acento); /* Verde neon/ciano */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+#news-feed h2:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em grid */
+    gap: 30px; /* Espaçamento entre os cards de notícias */
+    margin-top: 40px;
+}
+
+.news-item {
+    background-color: var(--cor-secundaria); /* Fundo cinza claro para os cards */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: left; /* Alinhamento do texto dentro do card */
+    border-top: 5px solid var(--cor-borda-clara); /* Borda superior sutil */
+    display: flex; /* Para controlar o layout interno (img, text) */
+    flex-direction: column; /* Conteúdo em coluna */
+}
+
+.news-item:hover {
+    transform: translateY(-8px); /* Efeito de levantar */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top-color: var(--cor-destaque); /* Muda a borda para azul no hover */
+}
+
+.news-item h3 {
+    font-size: 1.6em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.3;
+}
+
+.news-item .news-meta {
+    font-size: 0.9em;
+    color: var(--cor-texto-neutro);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px; /* Cantos arredondados para a imagem */
+    margin-bottom: 15px;
+    filter: brightness(0.9); /* Levemente mais escura para harmonizar */
+    transition: filter 0.3s ease;
+}
+
+.news-item:hover img {
+    filter: brightness(1); /* Brilho total no hover */
+}
+
+.news-item p:not(.news-meta) { /* Estilo para o parágrafo de conteúdo */
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--cor-texto-neutro);
+    margin-bottom: 15px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+.news-item .btn-read-more {
+    display: inline-block;
+    background-color: var(--cor-acento); /* Botão em verde neon */
+    color: var(--cor-texto-escuro); /* Texto escuro no botão neon */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-top: auto; /* Empurra o botão para a parte inferior do card */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 255, 127, 0.2);
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.news-item .btn-read-more:hover {
+    background-color: #00e06e; /* Levemente mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 255, 127, 0.3);
+}
+
+/* --- */
+/* Responsividade para a Página de Notícias */
+/* --- */
+@media (max-width: 992px) {
+    .news-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    #news-feed h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    #news-feed {
+        padding: 40px 0;
+    }
+    #news-feed h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .news-list {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 20px;
+    }
+    .news-item {
+        padding: 20px;
+    }
+    .news-item h3 {
+        font-size: 1.4em;
+    }
+    .news-item .news-meta {
+        font-size: 0.8em;
+    }
+    .news-item p:not(.news-meta) {
+        font-size: 0.9em;
+    }
+    .news-item img {
+        height: 180px;
+    }
+    .news-item .btn-read-more {
+        font-size: 0.85em;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #news-feed h2 {
+        font-size: 1.8em;
+    }
+    .news-item h3 {
+        font-size: 1.2em;
+    }
+    .news-item img {
+        height: 150px;
+    }
+}
+
+
+/* --- */
+/* Estilização do Footer */
+/* --- */
+footer {
+    background-color: var(--cor-secundaria); /* Fundo cinza claro */
+    color: var(--cor-texto-neutro);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 3px solid var(--cor-destaque); /* Linha de destaque azul */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.95em;
+    margin-top: 50px;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 0 0 15px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-links a img {
+    height: 30px;
+    width: 30px;
+    transition: filter 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.social-links a:hover img {
+    filter: drop-shadow(0 0 5px rgb(59, 180, 210)); /* Verde neon/ciano no hover */
+}
+
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Garante que o botão fique acima do menu */
+}
+
+.hamburger .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--cor-destaque); /* Cor azul vibrante para as barras */
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Estado ativo do hambúrguer (quando clicado) */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Estilo do menu de navegação responsivo */
+.nav-menu ul {
+    /* Mantém os estilos existentes de nav ul para telas grandes */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* --- */
+/* Responsividade Básica */
+/* --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+        width: 80%;
+    }
+
+    #nav-menu {
+        display: none;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+    
+}
+
+/* --- */
+/* Estilização da Barra de Rolagem (WebKit Scrollbar) */
+/* --- */
+
+/* Para o corpo da barra de rolagem (a trilha) */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+    height: 12px; /* Altura da barra de rolagem horizontal */
+    background-color: var(--cor-principal); /* Cor de fundo da trilha (branco quase puro) */
+}
+
+/* Para o "polegar" da barra de rolagem (o arrastador) */
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-destaque); /* Cor do polegar (azul vibrante) */
+    border-radius: 10px; /* Cantos arredondados do polegar */
+    border: 3px solid var(--cor-principal); /* Borda ao redor do polegar com a cor do fundo */
+    transition: background-color 0.3s ease;
+}
+
+/* Quando o mouse passa por cima do polegar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cor-acento); /* Cor do polegar no hover (verde neon/ciano) */
+}
+
+/* Para os botões de seta da barra de rolagem (se existirem, muitos navegadores modernos não os mostram por padrão) */
+::-webkit-scrollbar-button {
+    display: none; /* Geralmente é melhor ocultar os botões para um visual mais limpo */
+}
+
+/* Para a "esquina" onde as barras de rolagem vertical e horizontal se encontram */
+::-webkit-scrollbar-corner {
+    background-color: var(--cor-principal); /* Cor da esquina */
+}
