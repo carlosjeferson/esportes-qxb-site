@@ -1,6 +1,19 @@
 async function listarEventos() {
+    const eventListContainer = document.querySelector('.event-list');
+
+    if (!eventListContainer) {
+        console.error('Elemento .event-list não encontrado no DOM.');
+        return;
+    }
+
     try {
         const { data } = await axios.get('http://localhost:3000/eventos/listar');
+        const eventos = data;
+
+        if( eventos.length === 0 ){
+            eventListContainer.innerHTML = '<p>Nenhum evento encontrada no momento.</p>';
+            return;
+        }
 
         const listaFuturos = document.querySelector("#eventos-futuros .event-list");
         const listaPassados = document.querySelector("#eventos-passados .event-list");
@@ -40,6 +53,7 @@ async function listarEventos() {
 
     } catch (error) {
         console.error("Erro ao buscar eventos:", error);
+        eventListContainer.innerHTML = '<p>Não foi possível carregar os eventos. Tente novamente mais tarde.</p>';
     }
 }
 

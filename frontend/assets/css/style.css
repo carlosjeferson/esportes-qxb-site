@@ -1492,7 +1492,7 @@ footer p {
 /* --- */
 /* Responsividade Básica */
 /* --- */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     header .container {
         flex-direction: column;
         text-align: center;

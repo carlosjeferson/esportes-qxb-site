@@ -1,5 +1,5 @@
 async function listarNoticias() {
-const newsListContainer = document.querySelector('.news-list');
+    const newsListContainer = document.querySelector('.news-list');
     if (!newsListContainer) {
         console.error('Elemento .news-list não encontrado no DOM.');
         return;
@@ -18,7 +18,6 @@ const newsListContainer = document.querySelector('.news-list');
             const article = document.createElement('article');
             article.classList.add('news-item');
 
-            // Formata a data (ex: '2025-07-06T18:00:00.000Z' para '06 de Julho de 2025')
             const dataPublicacao = new Date(noticia.dataPublicacao);
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const dataFormatada = dataPublicacao.toLocaleDateString('pt-BR', options);
