@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <a href="cadastrarEvento.html">Cadastrar Evento</a>
-    <a href="cadastrarNoticia.html">Cadastrar Noticia</a>
+
+    <main>
+
+        <section id="eventos">
+            <h2>Eventos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Data</th>
+                        <th>Local</th>
+                        <th>Inscrições</th>
+                        <th>Ocorreu</th>
+                        <th>Ganhadores</th>
+                        <th>Editar</th>
+                        <th>Apagar</th>
+                    </tr>
+                </thead>
+                <tbody id="eventos-body">
+                    <!-- Dados de eventos serão carregados aqui via API -->
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="noticias">
+            <h2>Notícias</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Data de Publicação</th>
+                        <th>Autor</th>
+                        <th>Imagem</th>
+                        <th>Descrição</th>
+                        <th>Editar</th>
+                        <th>Apagar</th>
+                    </tr>
+                </thead>
+                <tbody id="noticias-body">
+                    <!-- Dados de notícias serão carregados aqui via API -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../assets/js/listarPainelAdministrativo.js"></script>
 </body>
 </html>

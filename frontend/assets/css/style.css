@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Roboto:wght@400;700&display=swap');
 
+
 :root {
     --cor-principal: #f8f9fa; /* Branco Quase Puro - Fundo Principal */
     --cor-secundaria: #e9ecef; /* Cinza Muito Claro - Fundo Secundário */
@@ -8,6 +9,10 @@
     --cor-texto-escuro: #212529; /* Preto Quase Puro - Texto */
     --cor-texto-neutro: #495057; /* Cinza Escuro - Texto Secundário */
     --cor-borda-clara: #ced4da; /* Cinza de Borda Leve */
+    --success-color: #28a745; /* Verde para sucesso/adicionar */
+    --danger-color: #dc3545; /* Vermelho para perigo/apagar */
+    --warning-color: #ffc107; /* Amarelo para aviso/editar */
+    --box-shadow-panel: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para seções */
 }
 
 html {
@@ -1394,6 +1399,241 @@ nav ul li a.active::after {
     }
     .news-item img {
         height: 150px;
+    }
+}
+
+/* --- */
+/* Estilo para o Painel Administrativo */
+/* --- */
+
+/* Estilo geral do corpo (mantendo margem do original, mas ajustando fontes) */
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte principal para o corpo */
+    margin: 20px;
+    background-color: var(--cor-principal); /* Fundo claro */
+    color: var(--cor-texto-escuro); /* Cor de texto padrão */
+    line-height: 1.6;
+}
+
+/* Estilo das seções (Eventos, Notícias) */
+section {
+    margin-bottom: 40px;
+    background-color: #fff; /* Fundo branco para as seções */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-panel); /* Sombra definida nas variáveis */
+    border-left: 5px solid var(--cor-destaque); /* Borda lateral azul de destaque */
+}
+
+/* Títulos das seções (h2) */
+section h2 {
+    font-family: 'Rajdhani', sans-serif; /* Fonte de destaque para títulos */
+    font-size: 1.8em;
+    color: var(--cor-destaque); /* Cor azul vibrante */
+    margin-top: 0; /* Remove margem superior padrão */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cor-borda-clara); /* Linha sutil abaixo do título */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo das tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff; /* Fundo branco para as tabelas */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que as bordas arredondadas funcionem corretamente */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para as tabelas */
+}
+
+/* Cabeçalho da tabela (th) */
+th {
+    padding: 12px;
+    border: 1px solid var(--cor-borda-clara); /* Borda clara */
+    text-align: center;
+    background-color: var(--cor-destaque); /* Fundo azul vibrante */
+    color: white; /* Texto branco */
+    font-weight: 700;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Células da tabela (td) */
+td {
+    padding: 12px;
+    border: 1px solid var(--cor-borda-clara); /* Borda clara */
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--cor-texto-neutro); /* Cor de texto neutra */
+}
+
+/* Listras zebradas na tabela para melhor legibilidade */
+tr:nth-child(even) {
+    background-color: var(--cor-secundaria); /* Fundo cinza muito claro para linhas pares */
+}
+
+/* Efeito de hover nas linhas da tabela */
+tr:hover {
+    background-color: #e0e4e8; /* Um tom ligeiramente mais escuro no hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Estilo para os ícones de ação (Editar, Apagar) */
+.actions i {
+    cursor: pointer;
+    margin: 0 8px; /* Espaçamento entre os ícones */
+    font-size: 1.2em;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.actions .fa-edit {
+    color: var(--warning-color); /* Amarelo para editar */
+}
+
+.actions .fa-edit:hover {
+    color: #d39e00; /* Tom mais escuro de amarelo no hover */
+    transform: scale(1.1); /* Pequena ampliação no hover */
+}
+
+.actions .fa-trash-alt {
+    color: var(--danger-color); /* Vermelho para apagar */
+}
+
+.actions .fa-trash-alt:hover {
+    color: #bd2130; /* Tom mais escuro de vermelho no hover */
+    transform: scale(1.1); /* Pequena ampliação no hover */
+}
+
+/* Estilo para as imagens dos ícones (se você mantiver as imagens em vez de Font Awesome) */
+.actions img {
+    width: 24px; /* Tamanho padrão para os ícones de imagem */
+    height: 24px;
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.actions img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* --- Responsividade das Tabelas (para telas menores) --- */
+@media (max-width: 768px) {
+    body {
+        margin: 15px; /* Margem menor em telas pequenas */
+    }
+
+    section {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    section h2 {
+        font-size: 1.5em; /* Títulos menores */
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+    }
+
+    /* Transforma a tabela em um layout de blocos para mobile */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; /* Esconde o cabeçalho original */
+    }
+
+    tr {
+        border: 1px solid var(--cor-borda-clara);
+        margin-bottom: 20px; /* Mais espaço entre os "cards" das linhas */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    td {
+        border: none; /* Remove bordas internas */
+        border-bottom: 1px solid var(--cor-borda-clara); /* Adiciona borda inferior para separar dados */
+        position: relative;
+        padding-left: 50%; /* Espaço para o label */
+        text-align: right;
+        min-height: 40px; /* Altura mínima para cada célula */
+        display: flex;
+        align-items: center; /* Centraliza o conteúdo verticalmente */
+        justify-content: flex-end; /* Alinha o conteúdo à direita */
+    }
+
+    td:last-child {
+        border-bottom: none; /* Remove a borda da última célula para o visual de card */
+    }
+
+    /* Cria o "label" para cada célula, usando o data-label do HTML */
+    td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        height: 100%; /* Ocupa a altura total da célula */
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: var(--cor-texto-neutro);
+        content: attr(data-label); /* Puxa o texto do atributo data-label */
+        display: flex;
+        align-items: center; /* Centraliza o label verticalmente */
+    }
+
+    /* Ajuste para as colunas de Ações */
+    .actions {
+        text-align: right; /* Garante que os ícones fiquem à direita */
+        /* Flexbox aqui para centralizar os ícones na horizontal se necessário */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%; /* Ocupa a largura total para alinhar os ícones */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+
+    section {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    td {
+        padding: 8px;
+        font-size: 0.85em;
+        padding-left: 45%; /* Reduz o padding-left para telas muito pequenas */
+    }
+
+    td:before {
+        width: 40%; /* Reduz a largura do label */
+        padding-right: 5px;
+    }
+
+    .actions i {
+        font-size: 1.1em;
+        margin: 0 4px;
+    }
+
+    .actions img {
+        width: 20px;
+        height: 20px;
     }
 }
 
