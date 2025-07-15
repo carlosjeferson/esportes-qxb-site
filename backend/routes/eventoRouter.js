@@ -20,4 +20,24 @@ router.post("/criar", (req, res) => {
     }
 });
 
+router.get("/recuperar/:id", (req, res) => {
+    const evento = EventoServices.recuperar(req.params.id);
+    if (!evento) {
+        return res.status(404).json({ erro: "Evento não encontrado" });
+    }
+    return res.status(200).json(evento);
+});
+
+router.put("/editar/:id", (req, res) => {
+    try {
+        const evento = EventoServices.editar(req.body);
+        if (!evento) {
+            return res.status(404).json({ erro: "Evento não encontrado" });
+        }
+        return res.status(200).json(evento);
+    } catch (error) {
+        return res.status(400).json({ erro: error.message });
+    }
+});
+
 module.exports = router;

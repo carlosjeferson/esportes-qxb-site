@@ -1,3 +1,5 @@
+let idAtual = null;
+
 async function listarEventos() {
     const eventListContainer = document.getElementById("eventos-body");
 
@@ -10,12 +12,6 @@ async function listarEventos() {
         const { data } = await axios.get('http://localhost:3000/eventos/listar');
 
         for (const evento of data) {
-            const dataFormatada = new Date(evento.data).toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: 'long',
-                year: 'numeric'
-            });
-
             const tr = document.createElement("tr");
             const tdID = document.createElement("td");
             const tdTitulo = document.createElement("td");
@@ -122,8 +118,6 @@ async function listarNoticias() {
             tr.appendChild(tdApagar);
             newsListContainer.appendChild(tr);
 
-            console.log(noticia)
-
         }
 
     } catch (error) {
@@ -132,6 +126,54 @@ async function listarNoticias() {
     }
 }
 
+async function salvarEdicao(){
+    const modalTitulo = document.getElementById("modal-titulo").value;
+    const modalData = document.getElementById("modal-data").value;
+    const modalLocal = document.getElementById("modal-local").value;
+    const modalInscricao = document.getElementById("modal-inscricao").value;
+    const modalGanhadores = document.getElementById("modal-ganhadores").value;
+    const modalOcorreu = document.getElementById("modal-ocorreu").value;
+
+    const dadosAtualizados = {
+        id: idAtual,
+        titulo: modalTitulo,
+        data: modalData,
+        local: modalLocal,
+        inscricao: modalInscricao,
+        ganhadores: modalGanhadores,
+        ocorreu: modalOcorreu === "true" ? "true" : "false"
+    };
+
+    const response = await axios.put(`http://localhost:3000/eventos/editar/${idAtual}`, dadosAtualizados);
+    console.log(response);
+}
+
+async function editarEvento(idBusca) {
+    idAtual = idBusca;
+    document.getElementById("modal").style.display = "flex";
+    const { data } = await axios.get(`http://localhost:3000/eventos/recuperar/${idBusca}`);
+    const modalTitulo = document.getElementById("modal-titulo");
+    const modalData = document.getElementById("modal-data");
+    const modalLocal = document.getElementById("modal-local");
+    const modalInscricao = document.getElementById("modal-inscricao");
+    const modalGanhadores = document.getElementById("modal-ganhadores");
+    const modalOcorreu = document.getElementById("modal-ocorreu");
+    const evento = data;
+
+    modalTitulo.value = evento.titulo;
+    modalData.value = evento.data;
+    modalLocal.value = evento.local;
+    modalInscricao.value = evento.inscricao;
+    modalGanhadores.value = evento.ganhadores;
+    modalOcorreu.value = String(evento.ocorreu);
+
+  }
+
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
 listarNoticias();
 
 listarEventos();
+

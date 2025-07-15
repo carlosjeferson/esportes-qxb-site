@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="../assets/css/painelAdministrativo.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Voltar</a></li>
+            <li><a href="cadastrarEvento.html">CadastrarEvento</a></li>
+            <li><a href="cadastrarNoticia.html">CadastrarNoticia</a></li>
+        </ul>
+    </nav>
 
     <main>
 
@@ -31,6 +38,35 @@
                     <!-- Dados de eventos serão carregados aqui via API -->
                 </tbody>
             </table>
+            <div id="modal">
+                <div class="modal-content">
+                <h3>Editar Evento</h3>
+
+                <label>Título:</label>
+                <input type="text" id="modal-titulo"><br><br>
+
+                <label>Data:</label>
+                <input type="date" id="modal-data"><br><br>
+
+                <label>Local:</label>
+                <input type="text" id="modal-local"><br><br>
+
+                <label>Inscrição:</label>
+                <input type="text" id="modal-inscricao"><br><br>
+
+                <label>Ocorreu:</label>
+                <select id="modal-ocorreu">
+                    <option value="false">Não</option>
+                    <option value="true">Sim</option>
+                </select><br><br>
+
+                <label>Ganhadores:</label>
+                <input type="text" id="modal-ganhadores"><br><br>
+
+                <button onclick="salvarEdicao()">Salvar</button>
+                <button onclick="fecharModal()">Cancelar</button>
+                </div>
+            </div>
         </section>
         
         <section id="noticias">

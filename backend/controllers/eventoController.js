@@ -27,13 +27,40 @@ class EventoServices {
     }
 
     static recuperar(idBusca){
-        for(let i = 0; i < Eventos; i++){
+        for(let i = 0; i < Eventos.length; i++){
             if( Eventos[i].id == idBusca){
                 return Eventos[i];
             }
         }
-        return false;
+        return { error : "Evento não foi encontrado"};
     }
+
+    static editar(dadosAtualizados) {
+        const index = Eventos.findIndex(e => e.id == dadosAtualizados.id);
+
+        if (index === -1) {
+            return null; // evento não encontrado
+        }
+
+        try {
+            const eventoAtualizado = new EventoModel(
+                dadosAtualizados.id,
+                dadosAtualizados.titulo,
+                dadosAtualizados.data,
+                dadosAtualizados.local,
+                dadosAtualizados.inscricao,
+                dadosAtualizados.ocorreu,
+                dadosAtualizados.ganhadores
+            );
+            Eventos[index] = eventoAtualizado;
+            console.log(eventoAtualizado);
+
+            return eventoAtualizado;
+        } catch (error) {
+            throw new Error(`Erro ao editar o evento: ${error.message}`);
+        }
+    }
+
 }
 
 module.exports = EventoServices;

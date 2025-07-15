@@ -6,7 +6,7 @@ class EventoModel{
         this.local = local;
         this.inscricao = inscricao;
         this.ocorreu = ocorreu;
-        this.ganhadores = this.ganhadores;
+        this.ganhadores = ganhadores;
     }
 }
 
