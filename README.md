@@ -10,6 +10,7 @@ O objetivo do projeto é oferecer uma plataforma simples e eficiente para a divu
 ![Tela Inicial](assets/tela-inicial.png)
 ![Tela Eventos](assets/tela-eventos.png)
 ![Tela Noticias](assets/tela-noticias.png)
+![Tela Administrativo](assets/tela-painelAdministrativo.png)
 
 ---
 
